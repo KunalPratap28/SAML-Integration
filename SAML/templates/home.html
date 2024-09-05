@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Authentication</title>
+    <link rel="stylesheet" href="{%static 'index.css'%}">
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    {% if user.is_authenticated %}
+        <a href="{% url 'saml_logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'saml_login' %}">Login with SAML</a>
+    {% endif %}
+</body>
+</html>
